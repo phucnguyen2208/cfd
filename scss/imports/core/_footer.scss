@@ -1,4 +1,93 @@
 footer {
+	.container {
+		position: relative;
+		.row {
+			padding: 60px 0;
+			.col-md-5 {
+				.des {
+					font-size: 17px;
+					line-height: 28px;
+					padding-right: 20px;
+				}
+				.address {
+					font-size: 14px;
+					margin-top: 45px;
+					line-height: 20px;
+				}
+				.phone {
+					font-size: 14px;
+					line-height: 28px;
+				}
+				.social {
+					display: flex;
+					margin-top: 20px;
+					img {
+						margin-right: 20px;
+						height: 30px;
+						cursor: pointer;
+					}
+				}
+			}
+			.col-md-6 {
+				nav {
+					ul {
+						display: flex;
+						li {
+							a {
+								margin: 0 5px;
+								padding-right: 13px;
+								white-space: nowrap;
+								display: inline-flex;
+								font-size: 16px;
+							}
+						}
+					}
+				}
+			}
+		}
+		.backtop {
+			position: absolute;
+			right: 0px;
+			display: flex;
+			align-items: center;
+			transform: rotateZ(90deg);
+			cursor: pointer;
+			top: 175px;
+			letter-spacing: 3px;
+			font-size: 10px;
+			text-transform: uppercase;
+			transition: 0.5s;
+			.line {
+				width: 100px;
+				height: 1px;
+				background: black;
+				margin-right: 10px;
+				transform: translateX(0px);
+				transition: 0.5s;
+				
+			}
+			&:hover {
+				.line {
+					transform: translateX(-20px);
+					transition: 0.5s;
+				}
+			}
+		}
+	}
+	.copy-right {
+		border-top: 1px solid #e6eaea;
+		.container {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			padding: 15px;
+			color: #7e7e7e;
+			font-size: 14px;
+		}
+	}
+
+
+
 	@include desktop {
 		
 	}

@@ -1,2 +1,5 @@
 /node_modules/
 /.history/
+/.sas-cache/
+/packege.json/
+/packege-lock.json/

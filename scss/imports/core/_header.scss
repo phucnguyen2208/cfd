@@ -18,7 +18,7 @@
 			border-right: 1px solid #e0e0e0;
 			padding: 0 15px;
 			transition: all 0.5s;
-			.button {
+			.btmenu {
 				width: 26px;
 				height: 15px;
 				position: relative;
@@ -26,23 +26,36 @@
 				span {
 					width: 100%;
 					height: 2px;
-					background: black;
-					border-radius: 10px;
 					display: block;
+					background: $black-cl;
 					position: absolute;
-					right: 0;
-					&:nth-child(1) {
-						top: 0px;
+					top: 50%;
+					transform: translateY(-50%);
+				}
+				&::before , &::after {
+					content: "";
+					width: 100%;
+					height: 2px;
+					display: block;
+					background: $black-cl;
+					transform: rotate(0deg);
+					transition: 0.3s;
+				}
+				&::after {
+					position: absolute;
+					bottom: 0;
+				}
+				&.clicked {
+					&::before {
+						@include transform(rotate(45deg) translate(5px,5px));
+						transition: 0.3s;
 					}
-					&:nth-child(2) {
-						top: 6px;
+					span {
+						opacity: 0;
 					}
-					&:nth-child(3) {
-						right: 0;
-						top: 12px;
-					}
-					&:not(:last-child) {
-						margin-bottom: 6px;
+					&::after {
+						@include transform(rotate(-45deg) translate(4px,-5px));
+						transition: 0.3s;
 					}
 				}
 			}

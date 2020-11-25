@@ -1,0 +1,37 @@
+
+.nav-menu {
+    display: none;
+    position: absolute;
+    width: 320px;
+    height: 100vh;
+    top: 60px;
+    left: 0;
+    bottom: 0;
+    background: #f4f7f6;
+    z-index: 91;
+    ul {
+        height: 100%;
+        li {
+            transition: 0.5s;
+            a {
+                height: 100%;
+                display: flex;
+                align-items: center;
+                text-transform: capitalize;
+                padding: 20px 35px;
+                justify-content: flex-start;
+                border-bottom: 1px solid #e0e0e0;
+            }
+            &:hover {
+                background: #e0e0e0;
+                transition: 0.5s;
+            }
+        }
+        .active {
+            background: $main-cl;
+            a {
+                color: $white-cl;
+            }
+        }
+    }
+}
