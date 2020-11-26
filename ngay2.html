@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>0</h1>
+    <button id="increase">Tăng</button>
+    <button id="decrease">Giảm</button>
+    <button id="reset">Reset</button>
+
+    <script>
+        // let count = 0;
+        // class counter {
+        //     constructor(init) {
+        //         this.count = init || 0;
+        //     }
+        //     tang() {
+        //         this.count++;
+        //         return this.count;
+        //     }
+        //     giam() {
+        //         this.count--;
+        //         return this.count;
+        //     }
+        //     reset() {
+        //         this.count = 0;
+        //         return this.count;
+        //     }
+        // }
+
+        // let a = new counter();
+
+        function counter(init) {
+            let count = init || 0;
+            return [
+                count,
+                () => ++count,
+                () => --count,
+                () => count = 0
+            ]
+        }
+
+        let [count , increase , decrease , reset] = counter(0);
+        
+        let h1 = document.getElementsByTagName('h1')[0];
+        let tang = document.querySelector('#increase');
+        let giam = document.querySelector('#decrease');
+        let re = document.querySelector('#reset');
+
+        tang.addEventListener("click", () => {
+            // h1.innerHTML = a.tang();
+            h1.innerHTML = increase();
+        });
+        giam.addEventListener("click", () => {
+            // h1.innerHTML = a.giam();
+            h1.innerHTML = decrease();
+        });
+        re.addEventListener("click", () => {
+            // h1.innerHTML = a.reset();
+            h1.innerHTML = reset();
+        });
+
+    </script>
+</body>
+
+</html>

@@ -1,8 +1,8 @@
-$(document).ready(function() {
+$(document).ready(function () {
     // back to top
-    $(".backtop").click(function() {
-        $("html, body").animate({scrollTop: 0}, 1000);
-    }); 
+    $(".backtop").click(function () {
+        $("html, body").animate({ scrollTop: 0 }, 1000);
+    });
 });
 
 // Menu
