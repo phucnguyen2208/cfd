@@ -1,0 +1,44 @@
+.payment {
+    background: #e5e5e5;
+    padding: 60px 0;
+    .container {
+        max-width: 790px;
+        margin: 0 auto;
+        h2 {
+            font-size: 44px;
+            text-align: center;
+            margin-bottom: 20px;
+            text-transform: capitalize;
+            letter-spacing: 0.8px;
+        }
+        .content {
+            font-size: 16px;
+            line-height: 28px;
+            text-align: left;
+            margin-top: 50px;
+            .section {
+                background: white;
+                margin-bottom: 30px;
+                padding: 50px;
+                h3 {
+                    font-size: 16px;
+                    line-height: 24px;
+                    text-align: left;
+                    text-transform: uppercase;
+                    &::after {
+                        content: "";
+                        display: block;
+                        width: 60px;
+                        height: 3px;
+                        background: black;
+                        margin-top: 15px;
+                        margin-bottom: 30px;
+                    }
+                }
+                p {
+                    margin-bottom: 14px;
+                }
+            }
+        }
+    }
+}
