@@ -105,6 +105,9 @@
                         color: $white-cl;
                     }
                 }
+                .active {
+                    display: block;
+                }
                 .tab2 {
                     display: none;
                 }

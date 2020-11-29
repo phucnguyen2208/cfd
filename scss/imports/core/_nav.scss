@@ -1,14 +1,21 @@
 
 .nav-menu {
     display: none;
-    position: absolute;
+    position: fixed;
     width: 320px;
     height: 100vh;
     top: 60px;
     left: 0;
     bottom: 0;
     background: #f4f7f6;
-    z-index: 91;
+    z-index: 90;
+    transform: translateX(-100%);
+    transition: 0.5s;
+    &.show {
+        display: block;
+        transform: translateX(0);
+        transition: 0.5s;
+    }
     ul {
         height: 100%;
         li {

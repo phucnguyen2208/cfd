@@ -1,15 +1,105 @@
+
 $(document).ready(function () {
     // back to top
     $(".backtop").click(function () {
         $("html, body").animate({ scrollTop: 0 }, 1000);
     });
+
+    // Accordion
+    $('.accordion .title').click(function () {
+        $('.accordion .title').removeClass('active');
+        $(this).addClass('active');
+    });
+
+
+    // show menu
+    $('.btmenu').on('click', function (e) {
+        if ($('.nav-menu').hasClass('show')) {
+            $('.nav-menu').removeClass('show');
+            $('.overlay').removeClass('showmhd');
+        } else {
+            $('.nav-menu').addClass('show');
+            $('.overlay').addClass('showmhd');
+        }
+        e.stopPropagation();
+    });
 });
+
 
 // Menu
 document.querySelector('.btmenu').addEventListener('click', function () {
-    document.querySelector('.nav-menu').classList.toggle('active');
     this.classList.toggle('clicked');
 });
+
+
+//tab 
+
+let tabTitle = document.querySelectorAll('.tab-title a');
+tabTitle.forEach((ele, index) => {
+    ele.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector('.tab-title .active').classList.remove('active');
+        ele.classList.add('active');
+
+        let content = document.querySelectorAll('.tab-content > *')[index];
+        let c = document.querySelector('.tab-content .active');
+        c.classList.remove('active');
+        c.style.display = 'none';
+        content.classList.add('active');
+        content.style.display = 'block';
+    })
+});
+
+
+
+// Select
+let select_styled = document.querySelector('.head');
+let select_p = document.querySelector('.text-p');
+let select_option = document.querySelector('.sub-a');
+if (select_styled) {
+    select_styled.addEventListener('click', function (e) {
+        e.stopPropagation();
+        select_option.classList.toggle('show');
+    });
+}
+if (select_option) {
+    select_option.querySelectorAll('a').forEach(e => {
+        e.addEventListener('click', function (e) {
+            e.preventDefault();
+            let text = this.innerHTML;
+            select_p.innerHTML = text;
+        });
+    });
+}
+let body = document.body;
+body.addEventListener('click', function () {
+    if (select_option) {
+        select_option.classList.remove('show');
+    }
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -56,7 +146,7 @@ function khoahoc() {
                     </div>
                 </div>
             </div>`;
-               
+
                 if (res[i].course_type == "offline") {
                     html_off += card;
                 }
@@ -68,8 +158,6 @@ function khoahoc() {
             document.querySelector(".section-offline .list").innerHTML = html_off;
             document.querySelector(".section-online .list").innerHTML = html_on;
         })
-
-
 
 }
 
@@ -86,9 +174,9 @@ function contact() {
     let content = 'vdlaljbnjg'
 
     fetch('https://www.cfdtraining.vn/api/contact', {
-        method : "POST",
+        method: "POST",
         headers: {
-            'Content-type' : 'application/json'
+            'Content-type': 'application/json'
         },
         body: JSON.stringify({
             name,
@@ -98,10 +186,10 @@ function contact() {
             content
         })
     })
-    .then(res => res.json())
-    .then(res = {
+        .then(res => res.json())
+        .then(res = {
 
-    })
+        })
 }
 
 contact();
@@ -118,8 +206,8 @@ function update() {
 
     fetch('https://www.cfdtraining.vn/api/cap-nhat-thong-tin-ca-nhan', {
         method: "POST",
-        headers : {
-            'Content-Type' : 'application/json'
+        headers: {
+            'Content-Type': 'application/json'
         },
         body: JSON.stringify({
             name,
@@ -129,10 +217,10 @@ function update() {
         })
     })
 
-    .then(res => res.json())
-    .then(res = {
+        .then(res => res.json())
+        .then(res = {
 
-    })
+        })
 }
 
 update();

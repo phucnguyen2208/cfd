@@ -44,7 +44,7 @@
         width: 100%;
         color: white;
         position: absolute;
-        bottom: 0px;
+        bottom: 30px;
         .container {
             display: flex;
             justify-content: space-between;
@@ -113,10 +113,19 @@
                     transition: 0.5s;
                 }
             }
+            .title.active::after {
+                transform: rotate(90deg);
+                transition: 0.5s;
+            }
+            .title.active + .content {
+                display: block;
+                transition: 0.5s;
+            }
             .content {
                 padding: 25px;
                 background: white;
                 display: none;
+                transition: 0.5s;
             }
         }
         .row {
