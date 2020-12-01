@@ -1,6 +1,6 @@
 .register {
     background: #e5e5e5;
-    padding: 60px 0;
+    padding: 120px 0 60px;
     .container {
         .wrap {
             max-width: 750px;
@@ -10,6 +10,7 @@
                 text-align: center;
                 padding: 0 15px;
                 text-transform: uppercase;
+                margin-bottom: 20px;
             }
             h1 {
                 font-size: 44px;
